@@ -1,0 +1,139 @@
+/* Import Custom Font */
+@font-face {
+    font-family: 'Cursed Timer ULiL';
+    src: url('CursedTimerUlil-Aznm.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #1D263B;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    padding: 20px;
+}
+
+/* Container Pembungkus Kartu Papan Skor */
+.scoreboard-card {
+    background-color: #1B244A;
+    padding: 50px 70px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Container utama di dalam kartu */
+.scoreboard-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 80px;
+}
+
+/* Container masing-masing tim */
+.team-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Judul Tim (HOME / GUEST) */
+.team-title {
+    color: #EEEEEE;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* Kotak Hitam Papan Skor */
+.score-box {
+    background-color: #080001;
+    width: 155px;
+    height: 120px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+/* Angka Skor Digital */
+.score-number {
+    color: #F94F6D;
+    font-family: 'Cursed Timer ULiL', monospace, sans-serif;
+    font-size: 5.5rem;
+    text-align: center;
+    line-height: 1;
+    padding-top: 6px;
+}
+
+/* Grup Tombol */
+.button-group {
+    display: flex;
+    gap: 10px;
+}
+
+/* Desain Tombol */
+.btn {
+    background-color: transparent;
+    border: 2px solid #9AABD8;
+    color: #9AABD8;
+    font-family: 'Cursed Timer ULiL', monospace, sans-serif;
+    font-size: 1.1rem;
+    width: 45px;
+    height: 45px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.2s ease-in-out;
+}
+
+/* Efek Hover & Active */
+.btn:hover {
+    background-color: rgba(154, 171, 216, 0.15);
+    color: #FFFFFF;
+    border-color: #FFFFFF;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* Media Query untuk Responsivitas Layar Kecil */
+@media (max-width: 600px) {
+    .scoreboard-card {
+        padding: 30px 20px;
+        width: 100%;
+    }
+
+    .scoreboard-container {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    .team-title {
+        font-size: 2rem;
+        margin-bottom: 12px;
+    }
+
+    .score-box {
+        width: 140px;
+        height: 100px;
+        margin-bottom: 18px;
+    }
+
+    .score-number {
+        font-size: 4.5rem;
+    }
+}
