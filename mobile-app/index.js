@@ -14,7 +14,6 @@ const inputEl = document.getElementById("input-el");
 const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
-const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") );
 
 const render = leads => {
     let listItems = "";
@@ -32,13 +31,11 @@ const render = leads => {
 };
 
 const setAndRender = () => {
-    localStorage.setItem("myLeads", JSON.stringify(myLeads));
     render(myLeads);
     return setAndRender;
 };
 
 const deleteBtnFn = () => {
-    localStorage.clear();
     myLeads = [];
     render(myLeads);
     return deleteBtnFn;
@@ -50,13 +47,6 @@ const inputBtnFn = () => {
     setAndRender();
     return inputBtnFn;
 };
-
-if (leadsFromLocalStorage) {
-    myLeads = leadsFromLocalStorage
-    render(myLeads)
-};
-
-tabBtn.addEventListener("click", tabBtnFn);
 
 deleteBtn.addEventListener("dblclick", deleteBtnFn);
 
