@@ -15,12 +15,6 @@ const inputBtn = document.getElementById("input-btn");
 const ulEl = document.getElementById("ul-el");
 const deleteBtn = document.getElementById("delete-btn");
 const leadsFromLocalStorage = JSON.parse( localStorage.getItem("myLeads") );
-const tabBtn = document.getElementById("tab-btn");
-const tabs = [
-    {
-        url: "https://www.linkedin.com/in/per-harald-borgen/"
-    }
-];
 
 const render = leads => {
     let listItems = "";
@@ -41,14 +35,6 @@ const setAndRender = () => {
     localStorage.setItem("myLeads", JSON.stringify(myLeads));
     render(myLeads);
     return setAndRender;
-};
-
-const tabBtnFn = () => {
-    // Save the url instead of logging it out
-    // console.log(tabs[0].url)
-    myLeads.push(tabs[0].url);
-    setAndRender();
-    return tabBtnFn;
 };
 
 const deleteBtnFn = () => {
